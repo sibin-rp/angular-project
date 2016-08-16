@@ -14,4 +14,6 @@
 - run `bundle` install 
 
 
- 
+### Frontend Tools
+
+We will use gulp in our Middleman projects, In this project you can use `wget {plugin url}`, then use rails default assets compailers.  
