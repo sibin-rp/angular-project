@@ -5,15 +5,31 @@ var myApp = angular.module('myApp',[]);
 
 
 
-myApp.controller('MyController', function MyController($scope,$http){
+myApp.controller('MyController1', function MyController($scope,$http){
 
   $http({
     method : "GET",
-    url : "https://api.github.com/orgs/redpanthers"
+    url : "https://api.github.com/orgs/redpanthers/members"
   }).then(function mySucces(response) {
-      $scope.style = response.data;
+      $scope.users = response.data;
     }, function myError(response) {
-      $scope.style = response.statusText;
+      $scope.users = response.statusText;
+  });
+
+  
+  
+});
+
+
+myApp.controller('MyController2', function MyController($scope,$http){
+
+  $http({
+    method : "GET",
+    url : "https://api.github.com/orgs/redpanthers/repos"
+  }).then(function mySucces(response) {
+      $scope.repos = response.data;
+    }, function myError(response) {
+      $scope.repos = response.statusText;
   });
 
   

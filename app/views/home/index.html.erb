@@ -1,18 +1,43 @@
 
-<div ng-controller="MyController">
+<div ng-controller="MyController1">
   <div class="search">
   	<h1>USERS</h1>
   	<label>Search</label>
-  	<input ng-model="query" placeholder="search for users" autofocus>
+  	<input ng-model="query1" placeholder="search for users" autofocus>
   </div>				
 
 
-  <h3>Different Colors of Styles</h3>
+  
 	<ul class="list">
-		<li class="cf" >
-			<h5>{{ style }}</h5>
+		<li class="cf" ng-repeat="item1 in users | filter:query1">
+			<h5>{{ item1.login }}</h5>
 			
 		</li>
 	</ul>
+  
 
 </div>
+
+
+
+<div ng-controller="MyController2">
+  <div class="search">
+  	<h1>REPOSITORIES</h1>
+  	<label>Search</label>
+  	<input ng-model="query2" placeholder="search for repositories" >
+  </div>				
+
+
+ 
+	<ul class="list">
+		<li class="cf" ng-repeat="item2 in repos | filter:query2">
+			<h5>{{ item2.name }}</h5>
+			
+		</li>
+	</ul>
+  
+
+</div>
+
+
+
