@@ -1,13 +1,19 @@
 //= require angular-route
 
+
 var myApp = angular.module('myApp',[]);
 
 
 
 myApp.controller('MyController', function MyController($scope,$http){
 
-  $http.get("/assets/data.json").success(function(data){
-    $scope.style = data;
+  $http({
+    method : "GET",
+    url : "https://api.github.com/orgs/redpanthers"
+  }).then(function mySucces(response) {
+      $scope.style = response.data;
+    }, function myError(response) {
+      $scope.style = response.statusText;
   });
 
   
