@@ -58,3 +58,5 @@ end
 gem 'pg'
 
 gem 'angularjs-rails'
+
+gem 'json'

@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require angular
 //= require angular-route.min
+//= require controllers
 
